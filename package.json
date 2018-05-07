@@ -49,5 +49,14 @@
   },
   "engines": {
     "node": ">=0.10.0"
-  }
+  },
+  "apps": [
+    {
+      "script": "server.js",
+      "watch": "true",
+      "name": "cors-anywhere",
+      "instances": "max",
+      "exec_mode": "cluster"
+    }
+  ]
 }
