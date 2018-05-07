@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "coveralls": "^2.11.6",
+    "cross-env": "^5.1.4",
     "eslint": "^2.2.0",
     "istanbul": "^0.4.2",
     "lolex": "^1.5.0",
@@ -42,7 +43,8 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "test": "mocha ./test/test*.js --reporter spec",
+    "test": "cross-env BASIC_NAME= BASIC_PASS= mocha ./test/test*.js --reporter spec",
+    "test-basic-auth": "cross-env BASIC_NAME=john BASIC_PASS=doe mocha test/basic-auth.js",
     "test-coverage": "istanbul cover ./node_modules/.bin/_mocha -- test/test.js test/test-ratelimit.js --reporter spec"
   },
   "engines": {
